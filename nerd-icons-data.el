@@ -1,0 +1,21 @@
+(defconst nerd-icons-alist
+  '((faicon)
+    (octicon)
+    (wicon)
+    (material)
+    (fileicon . (("c" . "")
+                 ("c++" . "")
+                 ("go" . "ﳑ")
+                 ("javascript" . "")
+                 ("java" . "")
+                 ("php" . "")
+                 ("python" . "")
+                 ("ruby" . "")
+                 ("R" . "ﳒ")
+                 ("typescript" . "ﯤ")))))
+
+(dolist (it nerd-icons-alist)
+  (let ((var (intern (format "nerd-icons-alist/%s" (car it)))))
+    (eval `(defconst ,var (cdr (assoc ',(car it) nerd-icons-alist))))))
+
+(provide 'nerd-icons-data)
