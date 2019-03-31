@@ -428,7 +428,7 @@ FONT-NAME is the name of the .ttf file providing the font, defaults to FAMILY."
 (nerd-icons--define-icon fileicon nerd-icons-alist/fileicon "Hack Nerd Font")
 (nerd-icons--define-icon faicon   nerd-icons-alist/faicon   "Hack Nerd Font")
 (nerd-icons--define-icon octicon  nerd-icons-alist/octicon  "Hack Nerd Font")
-(nerd-icons--define-icon wicon    nerd-icons-alist/wearther "Hack Nerd Font")
+(nerd-icons--define-icon weather  nerd-icons-alist/weather "Hack Nerd Font")
 (nerd-icons--define-icon material nerd-icons-alist/material "Hack Nerd Font")
 
 (provide 'nerd-icons)
