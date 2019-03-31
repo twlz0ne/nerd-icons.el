@@ -62,4 +62,42 @@
    (equal (cdr (assoc "typescript" nerd-icons-alist/fileicon))
           (nerd-icons-icon-for-file "foo.ts"))))
 
+(ert-deftest test-nerd-icons-icon-for-mode ()
+  (should
+   (equal (cdr (assoc "python" nerd-icons-alist/fileicon))
+          (nerd-icons-icon-for-mode 'python-mode))))
+
+(ert-deftest test-nerd-icons-icon-for-buffer ()
+  (should
+   (equal (cdr (assoc "elisp" nerd-icons-alist/fileicon))
+          (with-tem-buffer
+           (emacs-lisp-mode)
+           (nerd-icons-icon-for-buffer)))))
+
+(ert-deftest test-nerd-icons-icon-for-buffer ()
+  (should
+   (equal (cdr (assoc "elisp" nerd-icons-alist/fileicon))
+          (with-temp-buffer
+           (emacs-lisp-mode)
+           (nerd-icons-icon-for-buffer)))))
+
+(ert-deftest test-nerd-icons-icon-for-dir ()
+  (should
+   (equal
+    (cdr (assoc "trash-o" nerd-icons-alist/faicon))
+    (replace-regexp-in-string
+     "\\`\t+\\([^\t]+\\)\t*\\'" "\\1"
+     (substring-no-properties
+      (nerd-icons-icon-for-dir "trash"))))))
+
+(ert-deftest test-nerd-icons-icon-for-url ()
+  (should
+   (equal (cdr (assoc "google" nerd-icons-alist/faicon))
+          (nerd-icons-icon-for-url "https://google.com"))))
+
+(ert-deftest test-nerd-icons-icon-for-weather ()
+  (should
+   (equal (cdr (assoc "tornado" nerd-icons-alist/weather))
+          (nerd-icons-icon-for-weather "tornado"))))
+
 ;;; test-nerd-icons.el ends here

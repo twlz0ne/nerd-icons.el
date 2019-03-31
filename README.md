@@ -2,4 +2,16 @@
 
 # nerd-icons.el
 
-This package (code mainly taken from [All The Icons](https://github.com/domtronn/all-the-icons.el/tree/f996faf)) provides an interface to the [Hack Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/).
+This package is a clone of [All The Icons](https://github.com/domtronn/all-the-icons.el/tree/f996faf) (code also mainly taken from it).
+
+## Requirements
+
+- nerd-fonts (See [here](https://github.com/ryanoasis/nerd-fonts#font-installation) how to install)
+
+## Installation
+
+Clone this repository to `~/.emacs.d/site-lisp/nerd-icons`. Add the following to your `.emacs`:
+
+```elisp
+(require 'nerd-icons)
+```

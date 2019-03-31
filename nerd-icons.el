@@ -315,6 +315,272 @@
     ("^\\."             nerd-icons-octicon "gear"                    :v-adjust 0.0)
     ("."                nerd-icons-faicon "file-o"                   :height 0.8 :v-adjust 0.0 :face nerd-icons-dsilver)))
 
+(defvar nerd-icons-dir-icon-spec
+  '(
+    ("trash"            nerd-icons-faicon "trash-o"          :height 1.2 :v-adjust -0.1)
+    ("dropbox"          nerd-icons-faicon "dropbox"          :height 1.0 :v-adjust -0.1)
+    ("google[ _-]drive" nerd-icons-fileicon "google-drive" :height 1.3 :v-adjust -0.1)
+    ("^atom$"           nerd-icons-fileicon "atom"         :height 1.2 :v-adjust -0.1)
+    ("documents"        nerd-icons-faicon "book"             :height 1.0 :v-adjust -0.1)
+    ("download"         nerd-icons-faicon "cloud-download"   :height 0.9 :v-adjust -0.2)
+    ("desktop"          nerd-icons-octicon "device-desktop"  :height 1.0 :v-adjust -0.1)
+    ("pictures"         nerd-icons-faicon "picture-o"        :height 0.9 :v-adjust -0.2)
+    ("photos"           nerd-icons-faicon "camera-retro"     :height 1.0 :v-adjust -0.1)
+    ("music"            nerd-icons-faicon "music"            :height 1.0 :v-adjust -0.1)
+    ("movies"           nerd-icons-faicon "film"             :height 0.9 :v-adjust -0.1)
+    ("code"             nerd-icons-octicon "code"            :height 1.1 :v-adjust -0.1)
+    ("workspace"        nerd-icons-octicon "code"            :height 1.1 :v-adjust -0.1)
+    ("test"             nerd-icons-fileicon "test-dir"       :height 0.9)
+    ("\\.git"           nerd-icons-fileicon "git"          :height 1.0)
+    ("."                nerd-icons-octicon "file-directory"  :height 1.0 :v-adjust -0.1)
+    ))
+
+(defvar nerd-icons-weather-icon-spec
+  '(
+    ("tornado"               nerd-icons-weather "tornado")
+    ("hurricane"             nerd-icons-weather "hurricane")
+    ("thunderstorms"         nerd-icons-weather "thunderstorm")
+    ("sunny"                 nerd-icons-weather "day-sunny")
+    ("rain.*snow"            nerd-icons-weather "rain-mix")
+    ("rain.*hail"            nerd-icons-weather "rain-mix")
+    ("sleet"                 nerd-icons-weather "sleet")
+    ("hail"                  nerd-icons-weather "hail")
+    ("drizzle"               nerd-icons-weather "sprinkle")
+    ("rain"                  nerd-icons-weather "showers" :height 1.1 :v-adjust 0.0)
+    ("showers"               nerd-icons-weather "showers")
+    ("blowing.*snow"         nerd-icons-weather "snow-wind")
+    ("snow"                  nerd-icons-weather "snow")
+    ("dust"                  nerd-icons-weather "dust")
+    ("fog"                   nerd-icons-weather "fog")
+    ("haze"                  nerd-icons-weather "day-haze")
+    ("smoky"                 nerd-icons-weather "smoke")
+    ("blustery"              nerd-icons-weather "cloudy-windy")
+    ("windy"                 nerd-icons-weather "cloudy-gusts")
+    ("cold"                  nerd-icons-weather "snowflake-cold")
+    ("partly.*cloudy.*night" nerd-icons-weather "night-alt-partly-cloudy")
+    ("partly.*cloudy"        nerd-icons-weather "day-cloudy-high")
+    ("cloudy.*night"         nerd-icons-weather "night-alt-cloudy")
+    ("cxloudy.*day"          nerd-icons-weather "day-cloudy")
+    ("cloudy"                nerd-icons-weather "cloudy")
+    ("clear.*night"          nerd-icons-weather "night-clear")
+    ("fair.*night"           nerd-icons-weather "stars")
+    ("fair.*day"             nerd-icons-weather "horizon")
+    ("hot"                   nerd-icons-weather "hot")
+    ("not.*available"        nerd-icons-weather "na")
+    ))
+
+(defvar nerd-icons-mode-icon-spec
+  '(
+    (emacs-lisp-mode           nerd-icons-fileicon "elisp"              :height 1.0 :v-adjust -0.2 :face nerd-icons-purple)
+    (erc-mode                  nerd-icons-faicon "commenting-o"         :height 1.0 :v-adjust 0.0 :face nerd-icons-white)
+    (inferior-emacs-lisp-mode  nerd-icons-fileicon "elisp"              :height 1.0 :v-adjust -0.2 :face nerd-icons-lblue)
+    (dired-mode                nerd-icons-octicon "file-directory"      :v-adjust 0.0)
+    (lisp-interaction-mode     nerd-icons-fileicon "lisp"               :v-adjust -0.1 :face nerd-icons-orange)
+    (sly-mrepl-mode            nerd-icons-fileicon "clisp"               :v-adjust -0.1 :face nerd-icons-orange)
+    (slime-repl-mode           nerd-icons-fileicon "clisp"               :v-adjust -0.1 :face nerd-icons-orange)
+    (org-mode                  nerd-icons-fileicon "org"                :v-adjust 0.0 :face nerd-icons-lgreen)
+    (typescript-mode           nerd-icons-fileicon "typescript"         :v-adjust -0.1 :face nerd-icons-blue-alt)
+    (js-mode                   nerd-icons-fileicon "javascript"       :v-adjust -0.1 :face nerd-icons-yellow)
+    (js-jsx-mode               nerd-icons-fileicon "javascript"       :v-adjust -0.1 :face nerd-icons-yellow)
+    (js2-mode                  nerd-icons-fileicon "javascript"       :v-adjust -0.1 :face nerd-icons-yellow)
+    (js3-mode                  nerd-icons-fileicon "javascript"       :v-adjust -0.1 :face nerd-icons-yellow)
+    (rjsx-mode                 nerd-icons-fileicon "jsx-2"              :v-adjust -0.1 :face nerd-icons-cyan-alt)
+    (term-mode                 nerd-icons-octicon "terminal"            :v-adjust 0.2)
+    (eshell-mode               nerd-icons-octicon "terminal"            :v-adjust 0.0 :face nerd-icons-purple)
+    (magit-refs-mode           nerd-icons-octicon "git-branch"          :v-adjust 0.0 :face nerd-icons-red)
+    (magit-process-mode        nerd-icons-octicon "mark-github"         :v-adjust 0.0)
+    (magit-diff-mode           nerd-icons-octicon "git-compare"         :v-adjust 0.0 :face nerd-icons-lblue)
+    (ediff-mode                nerd-icons-octicon "git-compare"         :v-adjust 0.0 :Face nerd-icons-red)
+    (comint-mode               nerd-icons-faicon "terminal"             :v-adjust 0.0 :face nerd-icons-lblue)
+    (eww-mode                  nerd-icons-faicon "firefox"              :v-adjust -0.1 :face nerd-icons-red)
+    (org-agenda-mode           nerd-icons-octicon "checklist"           :v-adjust 0.0 :face nerd-icons-lgreen)
+    (cfw:calendar-mode         nerd-icons-octicon "calendar"            :v-adjust 0.0)
+    (ibuffer-mode              nerd-icons-faicon "files-o"              :v-adjust 0.0 :face nerd-icons-dsilver)
+    (messages-buffer-mode      nerd-icons-faicon "stack-overflow"       :v-adjust -0.1)
+    (help-mode                 nerd-icons-faicon "info"                 :v-adjust -0.1 :face nerd-icons-purple)
+    (benchmark-init/tree-mode  nerd-icons-octicon "dashboard"           :v-adjust 0.0)
+    (jenkins-mode              nerd-icons-fileicon "jenkins"            :face nerd-icons-blue)
+    (magit-popup-mode          nerd-icons-fileicon "git"              :face nerd-icons-red)
+    (magit-status-mode         nerd-icons-fileicon "git"              :face nerd-icons-lred)
+    (magit-log-mode            nerd-icons-fileicon "git"              :face nerd-icons-green)
+    (paradox-menu-mode         nerd-icons-faicon "archive"              :height 1.0 :v-adjust 0.0 :face nerd-icons-silver)
+    (Custom-mode               nerd-icons-octicon "settings")
+
+    ;; Special matcher for Web Mode based on the `web-mode-content-type' of the current buffer
+    (web-mode             nerd-icons--web-mode-icon)
+
+    (fundamental-mode                   nerd-icons-fileicon "elisp"            :height 1.0 :v-adjust -0.2 :face nerd-icons-dsilver)
+    (special-mode                       nerd-icons-fileicon "elisp"            :height 1.0 :v-adjust -0.2 :face nerd-icons-yellow)
+    (text-mode                          nerd-icons-octicon "file-text"         :v-adjust 0.0 :face nerd-icons-cyan)
+    (ruby-mode                          nerd-icons-fileicon "ruby-alt"       :face nerd-icons-lred)
+    (inf-ruby-mode                      nerd-icons-fileicon "ruby-alt"       :face nerd-icons-red)
+    (projectile-rails-compilation-mode  nerd-icons-fileicon "ruby-alt"       :face nerd-icons-red)
+    (rspec-compilation-mode             nerd-icons-fileicon "ruby-alt"       :face nerd-icons-red)
+    (rake-compilation-mode              nerd-icons-fileicon "ruby-alt"       :face nerd-icons-red)
+    (sh-mode                            nerd-icons-fileicon "terminal"       :face nerd-icons-purple)
+    (shell-mode                         nerd-icons-fileicon "terminal"       :face nerd-icons-purple)
+    (fish-mode                          nerd-icons-fileicon "terminal"       :face nerd-icons-lpink)
+    (nginx-mode                         nerd-icons-fileicon "nginx"            :height 0.9  :face nerd-icons-dgreen)
+    (apache-mode                        nerd-icons-fileicon "apache"         :height 0.9  :face nerd-icons-dgreen)
+    (makefile-mode                      nerd-icons-fileicon "gnu"              :face nerd-icons-dorange)
+    (dockerfile-mode                    nerd-icons-fileicon "dockerfile"       :face nerd-icons-blue)
+    (docker-compose-mode                nerd-icons-fileicon "dockerfile"       :face nerd-icons-lblue)
+    (xml-mode                           nerd-icons-faicon "file-code-o"        :height 0.95 :face nerd-icons-lorange)
+    (json-mode                          nerd-icons-octicon "settings"          :face nerd-icons-yellow)
+    (yaml-mode                          nerd-icons-octicon "settings"          :v-adjust 0.0 :face nerd-icons-dyellow)
+    (elisp-byte-code-mode               nerd-icons-octicon "file-binary"       :v-adjust 0.0 :face nerd-icons-dsilver)
+    (archive-mode                       nerd-icons-octicon "file-zip"          :v-adjust 0.0 :face nerd-icons-lmaroon)
+    (elm-mode                           nerd-icons-fileicon "elm"              :face nerd-icons-blue)
+    (erlang-mode                        nerd-icons-fileicon "erlang"         :face nerd-icons-red :v-adjust -0.1 :height 0.9)
+    (elixir-mode                        nerd-icons-fileicon "elixir"         :face nerd-icons-lorange :v-adjust -0.1 :height 0.9)
+    (java-mode                          nerd-icons-fileicon "java"           :height 1.0  :face nerd-icons-purple)
+    (go-mode                            nerd-icons-fileicon "go"             :height 1.0  :face nerd-icons-blue)
+    (matlab-mode                        nerd-icons-fileicon "matlab"           :face nerd-icons-orange)
+    (perl-mode                          nerd-icons-fileicon "perl"           :face nerd-icons-lorange)
+    (cperl-mode                         nerd-icons-fileicon "perl"           :face nerd-icons-lorange)
+    (php-mode                           nerd-icons-fileicon "php"              :face nerd-icons-lsilver)
+    (prolog-mode                        nerd-icons-fileicon "prolog"         :height 1.1  :face nerd-icons-lmaroon)
+    (python-mode                        nerd-icons-fileicon "python"         :height 1.0  :face nerd-icons-dblue)
+    (inferior-python-mode               nerd-icons-fileicon "python"         :height 1.0  :face nerd-icons-dblue)
+    (racket-mode                        nerd-icons-fileicon "racket"           :height 1.2 :face nerd-icons-red)
+    (rust-mode                          nerd-icons-fileicon "rust"           :height 1.2  :face nerd-icons-maroon)
+    (scala-mode                         nerd-icons-fileicon "scala"          :face nerd-icons-red)
+    (scheme-mode                        nerd-icons-fileicon   "scheme"         :height 1.2 :face nerd-icons-red)
+    (swift-mode                         nerd-icons-fileicon "swift"          :height 1.0 :v-adjust -0.1 :face nerd-icons-green)
+    (c-mode                             nerd-icons-fileicon "c-line"         :face nerd-icons-blue)
+    (c++-mode                           nerd-icons-fileicon "cplusplus-line" :v-adjust -0.2 :face nerd-icons-blue)
+    (csharp-mode                        nerd-icons-fileicon "csharp-line"    :face nerd-icons-dblue)
+    (clojure-mode                       nerd-icons-fileicon "clojure-line"   :height 1.0  :face nerd-icons-blue)
+    (cider-repl-mode                    nerd-icons-fileicon "clojure-line"   :height 1.0  :face nerd-icons-dblue)
+    (clojurescript-mode                 nerd-icons-fileicon "cljs"             :height 1.0  :face nerd-icons-dblue)
+    (coffee-mode                        nerd-icons-fileicon "coffeescript"   :height 1.0  :face nerd-icons-maroon)
+    (lisp-mode                          nerd-icons-fileicon "lisp"             :face nerd-icons-orange)
+    (css-mode                           nerd-icons-fileicon "css3"           :face nerd-icons-yellow)
+    (scss-mode                          nerd-icons-fileicon "sass"           :face nerd-icons-pink)
+    (sass-mode                          nerd-icons-fileicon "sass"           :face nerd-icons-dpink)
+    (less-css-mode                      nerd-icons-fileicon "less"           :height 0.8  :face nerd-icons-dyellow)
+    (stylus-mode                        nerd-icons-fileicon "stylus"         :face nerd-icons-lgreen)
+    (csv-mode                           nerd-icons-octicon "graph"             :v-adjust 0.0 :face nerd-icons-dblue)
+    (haskell-mode                       nerd-icons-fileicon "haskell"        :height 1.0  :face nerd-icons-red)
+    (haml-mode                          nerd-icons-fileicon "haml"             :face nerd-icons-lyellow)
+    (html-mode                          nerd-icons-fileicon "html5"          :face nerd-icons-orange)
+    (rhtml-mode                         nerd-icons-fileicon "html5"          :face nerd-icons-lred)
+    (mustache-mode                      nerd-icons-fileicon "moustache"        :face nerd-icons-green)
+    (slim-mode                          nerd-icons-octicon "dashboard"         :v-adjust 0.0 :face nerd-icons-yellow)
+    (jade-mode                          nerd-icons-fileicon "jade"             :face nerd-icons-red)
+    (pug-mode                           nerd-icons-fileicon "pug"              :face nerd-icons-red)
+    (react-mode                         nerd-icons-fileicon "react"          :height 1.1  :face nerd-icons-lblue)
+    (image-mode                         nerd-icons-octicon "file-media"        :v-adjust 0.0 :face nerd-icons-blue)
+    (texinfo-mode                       nerd-icons-fileicon "tex"              :face nerd-icons-lred)
+    (markdown-mode                      nerd-icons-octicon "markdown"          :v-adjust 0.0 :face nerd-icons-lblue)
+    (bibtex-mode                        nerd-icons-fileicon "bib"              :face nerd-icons-maroon)
+    (org-mode                           nerd-icons-fileicon "org"              :face nerd-icons-lgreen)
+    (compilation-mode                   nerd-icons-faicon "cogs"               :v-adjust 0.0 :height 1.0)
+    (objc-mode                          nerd-icons-faicon "apple"              :v-adjust 0.0 :height 1.0)
+    (tuareg-mode                        nerd-icons-fileicon "ocaml"            :v-adjust 0.0 :height 1.0)
+    (purescript-mode                    nerd-icons-fileicon "purescript"       :v-adjust 0.0 :height 1.0)
+    ))
+
+(defvar nerd-icons-url-spec
+  '(
+    ;; Social media and communities
+    ("^\\(https?://\\)?\\(www\\.\\)?del\\.icio\\.us" nerd-icons-faicon "delicious")
+    ("^\\(https?://\\)?\\(www\\.\\)?behance\\.net" nerd-icons-faicon "behance")
+    ("^\\(https?://\\)?\\(www\\.\\)?dribbble\\.com" nerd-icons-faicon "dribbble")
+    ("^\\(https?://\\)?\\(www\\.\\)?facebook\\.com" nerd-icons-faicon "facebook-official")
+    ("^\\(https?://\\)?\\(www\\.\\)?glide\\.me" nerd-icons-faicon "glide-g")
+    ("^\\(https?://\\)?\\(www\\.\\)?plus\\.google\\.com" nerd-icons-faicon "google-plus")
+    ("linkedin\\.com" nerd-icons-faicon "linkedin")
+    ("^\\(https?://\\)?\\(www\\.\\)?ok\\.ru" nerd-icons-faicon "odnoklassniki")
+    ("^\\(https?://\\)?\\(www\\.\\)?reddit\\.com" nerd-icons-faicon "reddit-alien")
+    ("^\\(https?://\\)?\\(www\\.\\)?slack\\.com" nerd-icons-faicon "slack")
+    ("^\\(https?://\\)?\\(www\\.\\)?snapchat\\.com" nerd-icons-faicon "snapchat-ghost")
+    ("^\\(https?://\\)?\\(www\\.\\)?weibo\\.com" nerd-icons-faicon "weibo")
+    ("^\\(https?://\\)?\\(www\\.\\)?twitter\\.com" nerd-icons-faicon "twitter")
+    ;; Blogging
+    ("joomla\\.org" nerd-icons-faicon "joomla")
+    ("^\\(https?://\\)?\\(www\\.\\)?medium\\.com" nerd-icons-faicon "medium")
+    ("tumblr\\.com" nerd-icons-faicon "tumblr")
+    ("^wordpress\\.com" nerd-icons-faicon "wordpress")
+    ;; Programming
+    ("^\\(https?://\\)?\\(www\\.\\)?bitbucket\\.org" nerd-icons-octicon "bitbucket")
+    ("^\\(https?://\\)?\\(www\\.\\)?codepen\\.io" nerd-icons-faicon "codepen")
+    ("^\\(https?://\\)?\\(www\\.\\)?codiepie\\.com" nerd-icons-faicon "codiepie")
+    ("^\\(https?://\\)?\\(www\\.\\)?gist\\.github\\.com" nerd-icons-octicon "gist")
+    ("^\\(https?://\\)?\\(www\\.\\)?github\\.com" nerd-icons-octicon "mark-github")
+    ("^\\(https?://\\)?\\(www\\.\\)?gitlab\\.com" nerd-icons-faicon "gitlab")
+    ("^\\(https?://\\)?\\(www\\.\\)?news\\.ycombinator\\.com" nerd-icons-faicon "hacker-news")
+    ("^\\(https?://\\)?\\(www\\.\\)?jsfiddle\\.net" nerd-icons-faicon "jsfiddle")
+    ("^\\(https?://\\)?\\(www\\.\\)?maxcdn\\.com" nerd-icons-faicon "maxcdn")
+    ("^\\(https?://\\)?\\(www\\.\\)?stackoverflow\\.com" nerd-icons-faicon "stack-overflow")
+    ;; Video
+    ("^\\(https?://\\)?\\(www\\.\\)?twitch\\.tv" nerd-icons-faicon "twitch")
+    ("^\\(https?://\\)?\\(www\\.\\)?vimeo\\.com" nerd-icons-faicon "vimeo")
+    ("^\\(https?://\\)?\\(www\\.\\)?youtube\\.com" nerd-icons-faicon "youtube")
+    ("^\\(https?://\\)?\\(www\\.\\)?youtu\\.be" nerd-icons-faicon "youtube")
+    ("^\\(https?://\\)?\\(www\\.\\)?vine\\.co" nerd-icons-faicon "vine")
+    ;; Sound
+    ("^\\(https?://\\)?\\(www\\.\\)?last\\.fm" nerd-icons-faicon "lastfm")
+    ("^\\(https?://\\)?\\(www\\.\\)?mixcloud\\.com" nerd-icons-faicon "mixcloud")
+    ("^\\(https?://\\)?\\(www\\.\\)?soundcloud\\.com" nerd-icons-faicon "soundcloud")
+    ("spotify\\.com" nerd-icons-faicon "spotify")
+    ;; Shopping
+    ("^\\(https?://\\)?\\(www\\.\\)?amazon\\." nerd-icons-faicon "amazon")
+    ("^\\(https?://\\)?\\(www\\.\\)?opencart\\.com" nerd-icons-faicon "opencart")
+    ("^\\(https?://\\)?\\(www\\.\\)?paypal\\.com" nerd-icons-faicon "paypal")
+    ("^\\(https?://\\)?\\(www\\.\\)?shirtsinbulk\\.com" nerd-icons-faicon "shitsinbulk")
+    ;; Images
+    ("^\\(https?://\\)?\\(www\\.\\)?500px\\.com" nerd-icons-faicon "500px")
+    ("^\\(https?://\\)?\\(www\\.\\)?deviantart\\.com" nerd-icons-faicon "deviantart")
+    ("^\\(https?://\\)?\\(www\\.\\)?flickr\\.com" nerd-icons-faicon "flickr")
+    ("^\\(https?://\\)?\\(www\\.\\)?instagram\\.com" nerd-icons-faicon "instagram")
+    ("^\\(https?://\\)?\\(www\\.\\)?pinterest\\." nerd-icons-faicon "pinterest")
+    ;; Information and books
+    ("^\\(https?://\\)?\\(www\\.\\)?digg\\.com" nerd-icons-faicon "digg")
+    ("^\\(https?://\\)?\\(www\\.\\)?foursquare\\.com" nerd-icons-faicon "foursquare")
+    ("^\\(https?://\\)?\\(www\\.\\)?getpocket\\.com" nerd-icons-faicon "get-pocket")
+    ("^\\(https?://\\)?\\(www\\.\\)?scribd\\.com" nerd-icons-faicon "scribd")
+    ("^\\(https?://\\)?\\(www\\.\\)?slideshare\\.net" nerd-icons-faicon "slideshare")
+    ("stackexchange\\.com" nerd-icons-faicon "stack-exchange")
+    ("^\\(https?://\\)?\\(www\\.\\)?stumbleupon\\.com" nerd-icons-faicon "stumbleupon")
+    ("^\\(https?://\\)?\\(www\\.\\)?tripadvisor\\." nerd-icons-faicon "tripadvisor")
+    ("^\\(https?://\\)?\\(www\\.\\)?yelp\\." nerd-icons-faicon "yelp")
+
+    ("wikipedia\\.org" nerd-icons-faicon "wikipedia-w")
+    ;; Various companies and tools
+    ("^\\(https?://\\)?\\(www\\.\\)?angel\\.co" nerd-icons-faicon "angellist")
+    ("^\\(https?://\\)?\\(www\\.\\)?apple\\.com" nerd-icons-faicon "apple")
+    ("^\\(https?://\\)?\\(www\\.\\)?buysellads\\.com" nerd-icons-faicon "buysellads")
+    ("^\\(https?://\\)?\\(www\\.\\)?connectdevelop\\.com" nerd-icons-faicon "connectdevelop")
+    ("^\\(https?://\\)?\\(www\\.\\)?dashcube\\.com" nerd-icons-faicon "dashcube")
+    ("^\\(https?://\\)?\\(www\\.\\)?dropbox\\.com" nerd-icons-faicon "dropbox")
+    ("^\\(https?://\\)?\\(www\\.\\)?enviragallery\\.com" nerd-icons-faicon "envira")
+    ("^\\(https?://\\)?\\(www\\.\\)?fortawesome\\.com" nerd-icons-faicon "fort-awesome")
+    ("^\\(https?://\\)?\\(www\\.\\)?forumbee\\.com" nerd-icons-faicon "forumbee")
+    ("^\\(https?://\\)?\\(www\\.\\)?gratipay\\.com" nerd-icons-faicon "gratipay")
+    ("^\\(https?://\\)?\\(www\\.\\)?modx\\.com" nerd-icons-faicon "modx")
+    ("^\\(https?://\\)?\\(www\\.\\)?pagelines\\.com" nerd-icons-faicon "pagelines")
+    ("^\\(https?://\\)?\\(www\\.\\)?producthunt\\.com" nerd-icons-faicon "product-hunt")
+    ("sellsy\\.com" nerd-icons-faicon "sellsy")
+    ("^\\(https?://\\)?\\(www\\.\\)?simplybuilt\\.com" nerd-icons-faicon "simplybuilt")
+    ("^\\(https?://\\)?\\(www\\.\\)?skyatlas\\.com" nerd-icons-faicon "skyatlas")
+    ("^\\(https?://\\)?\\(www\\.\\)?skype\\.com" nerd-icons-faicon "skype")
+    ("steampowered\\.com" nerd-icons-faicon "steam")
+    ("^\\(https?://\\)?\\(www\\.\\)?themeisle\\.com" nerd-icons-faicon "themeisle")
+    ("^\\(https?://\\)?\\(www\\.\\)?trello\\.com" nerd-icons-faicon "trello")
+    ("^\\(https?://\\)?\\(www\\.\\)?whatsapp\\.com" nerd-icons-faicon "whatsapp")
+    ("^\\(https?://\\)?\\(www\\.\\)?ycombinator\\.com" nerd-icons-faicon "y-combinator")
+    ("yahoo\\.com" nerd-icons-faicon "yahoo")
+    ("^\\(https?://\\)?\\(www\\.\\)?yoast\\.com" nerd-icons-faicon "yoast")
+    ;; Catch all
+    ("android" nerd-icons-faicon "android")
+    ("creativecommons" nerd-icons-faicon "creative-commons")
+    ("forums?" nerd-icons-octicon "comment-discussion")
+    ("\\.pdf$" nerd-icons-octicon "file-pdf" :v-adjust 0.0 :face nerd-icons-dred)
+    ("google" nerd-icons-faicon "google")
+    ("\\.rss" nerd-icons-faicon "rss")
+    ))
+
 ;;; Functions
 
 (defun nerd-icons-match-to-alist (file alist)
@@ -345,6 +611,17 @@ If SHOW-FAMILY is non-nil, displays the icons family in the candidate string."
          (cons candidate-name candidate-icon)))
      data)))
 
+(defun nerd-icons-dir-is-submodule (dir)
+  "Checker whether or not DIR is a git submodule."
+  (let* ((gitmodule-dir (locate-dominating-file dir ".gitmodules"))
+         (modules-file  (expand-file-name (format "%s.gitmodules" gitmodule-dir)))
+         (module-search (format "submodule \".*?%s\"" (file-name-base dir))))
+
+    (when (and gitmodule-dir (file-exists-p (format "%s/.git" dir)))
+      (with-temp-buffer
+        (insert-file-contents modules-file)
+        (search-forward-regexp module-search (point-max) t)))))
+
 ;;;###autoload
 (defun nerd-icons-insert (&optional arg family)
   "Interactive icon insertion function.
@@ -365,6 +642,20 @@ When FAMILY is non-nil, limit the candidates to the icon set matching it."
     (if arg (prin1 result) (insert result))))
 
 ;;;###autoload
+(defun nerd-icons--icon-info-for-buffer (&optional f)
+  "Get icon info for the current buffer.
+
+When F is provided, the info function is calculated with the format
+`nerd-icons-icon-%s-for-file' or `nerd-icons-icon-%s-for-mode'."
+  (let* ((base-f (concat "nerd-icons-icon" (when f (format "-%s" f))))
+         (file-f (intern (concat base-f "-for-file")))
+         (mode-f (intern (concat base-f "-for-mode"))))
+    (if (and (buffer-file-name)
+             (nerd-icons-auto-mode-match?))
+        (funcall file-f (file-name-nondirectory (buffer-file-name)))
+      (funcall mode-f major-mode))))
+
+;;;###autoload
 (defun nerd-icons-icon-for-file (file &rest arg-overrides)
   "Get the formatted icon for FILE.
 ARG-OVERRIDES should be a plist containning `:height',
@@ -374,6 +665,73 @@ inserting functions."
          (args (cdr icon)))
     (when arg-overrides (setq args (append `(,(car args)) arg-overrides (cdr args))))
     (apply (car icon) args)))
+
+;;;###autoload
+(defun nerd-icons-icon-for-mode (mode &rest arg-overrides)
+  "Get the formatted icon for MODE.
+ARG-OVERRIDES should be a plist containining `:height',
+`:v-adjust' or `:face' properties like in the normal icon
+inserting functions."
+  (let* ((icon (cdr (or (assoc mode nerd-icons-mode-icon-spec)
+                        (assoc (get mode 'derived-mode-parent) nerd-icons-mode-icon-spec))))
+         (args (cdr icon)))
+    (when arg-overrides (setq args (append `(,(car args)) arg-overrides (cdr args))))
+    (if icon (apply (car icon) args) mode)))
+
+;;;###autoload
+(defun nerd-icons-icon-for-buffer ()
+  "Get the formatted icon for the current buffer.
+
+This function prioritises the use of the buffers file extension to
+discern the icon when its `major-mode' matches its auto mode,
+otherwise it will use the buffers `major-mode' to decide its
+icon."
+  (nerd-icons--icon-info-for-buffer))
+
+;;;###autoload
+(defun nerd-icons-icon-for-dir (dir &optional chevron padding)
+  "Format an icon for DIR with CHEVRON similar to tree based directories.
+
+If PADDING is provided, it will prepend and separate the chevron
+and directory with PADDING.
+
+Produces different symbols by inspecting DIR to distinguish
+symlinks and git repositories which do not depend on the
+directory contents"
+  (let* ((matcher (nerd-icons-match-to-alist (file-name-base (directory-file-name dir)) nerd-icons-dir-icon-spec))
+         (path (expand-file-name dir))
+         (chevron (if chevron (nerd-icons-octicon (format "chevron-%s" chevron) :height 0.8 :v-adjust -0.1) ""))
+         (padding (or padding "\t"))
+         (icon (cond
+                ((file-symlink-p path)
+                 (nerd-icons-octicon "file-symlink-directory" :height 1.0))
+                ((nerd-icons-dir-is-submodule path)
+                 (nerd-icons-octicon "file-submodule" :height 1.0))
+                ((file-exists-p (format "%s/.git" path))
+                 (format "%s" (nerd-icons-octicon "repo" :height 1.1)))
+                (t (apply (car matcher) (cdr matcher))))))
+    (format "%s%s%s%s%s" padding chevron padding icon padding)))
+
+;;;###autoload
+(defun nerd-icons-icon-for-url (url &rest arg-overrides)
+  "Get the formatted icon for URL.
+If an icon for URL isn't found in `nerd-icons-url-spec', a globe is used.
+ARG-OVERRIDES should be a plist containining `:height',
+`:v-adjust' or `:face' properties like in the normal icon
+inserting functions."
+  (let* ((icon (nerd-icons-match-to-alist url nerd-icons-url-spec))
+         (args (cdr icon)))
+    (unless icon
+      (setq icon '(nerd-icons-faicon "globe"))
+      (setq args (cdr icon)))
+    (when arg-overrides (setq args (append `(,(car args)) arg-overrides (cdr args))))
+    (apply (car icon) args)))
+
+;;;###autoload
+(defun nerd-icons-icon-for-weather (weather)
+  "Get an icon for a WEATHER status."
+  (let ((icon (nerd-icons-match-to-alist weather nerd-icons-weather-icon-spec)))
+    (if icon (apply (car icon) (cdr icon)) weather)))
 
 ;;; Initialize
 

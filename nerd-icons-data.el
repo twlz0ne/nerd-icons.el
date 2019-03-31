@@ -3,6 +3,7 @@
   '((fileicon
      . (("c"          . "") ;; custom-c
         ("c++"        . "") ;; custom-cpp
+        ("elisp"      . "ﬦ") ;; mdi-lambda
         ("go"         . "ﳑ") ;; mdi-language-go
         ("javascript" . "") ;; mdi-language-javascript
         ("java"       . "") ;; mdi-language-java
