@@ -628,6 +628,21 @@ If SHOW-FAMILY is non-nil, displays the icons family in the candidate string."
         (insert-file-contents modules-file)
         (search-forward-regexp module-search (point-max) t)))))
 
+;; Family Face Functions
+(defun nerd-icons-icon-family-for-file (file)
+  "Get the icons font family for FILE."
+  (let ((icon (all-the-icons-match-to-alist file nerd-icons-icon-alist)))
+    (funcall (intern (format "%s-family" (car icon))))))
+
+(defun nerd-icons-icon-family-for-mode (mode)
+  "Get the icons font family for MODE."
+  (let ((icon (cdr (assoc mode nerd-icons-mode-icon-alist))))
+    (if icon (funcall (intern (format "%s-family" (car icon)))) nil)))
+
+(defun nerd-icons-icon-family (icon)
+  "Get a propertized ICON family programatically."
+  (plist-get (get-text-property 0 'face icon) :family))
+
 ;;;###autoload
 (defun nerd-icons-insert (&optional arg family)
   "Interactive icon insertion function.
@@ -748,15 +763,14 @@ inserting functions."
 
   (defun nerd-icons--family-name (name)
     "Get the symbol for an icon family function for icon set NAME."
-    (intern ;; (concat "nerd-icons-" (downcase (symbol-name name)) "-family")
-            "Hack Nerd Font"))
+    (intern (concat "nerd-icons-" (downcase (symbol-name name)) "-family")))
 
   (defun nerd-icons--insert-function-name (name)
     "Get the symbol for an icon insert function for icon set NAME."
     (intern (concat "nerd-icons-insert-" (downcase (symbol-name name))))))
 
 (defmacro nerd-icons--define-icon (name alist family &optional font-name)
-"Macro to generate functions for inserting icons for icon set NAME.
+  "Macro to generate functions for inserting icons for icon set NAME.
 
 NAME defines is the name of the iconset and will produce a
 function of the for `nerd-icons-NAME'.
@@ -767,27 +781,27 @@ directory of this package.
 
 FAMILY is the font family to use for the icons.
 FONT-NAME is the name of the .ttf file providing the font, defaults to FAMILY."
-`(progn
-   (defun ,(nerd-icons--function-name name) (icon-name &rest args)
-     (let ((icon (cdr (assoc icon-name ,alist)))
-           (other-face (when nerd-icons-color-icons (plist-get args :face)))
-           (height  (* nerd-icons-scale-factor (or (plist-get args :height) 1.0)))
-           (v-adjust (* nerd-icons-scale-factor (or (plist-get args :v-adjust) nerd-icons-default-adjust)))
-           (family ,family))
-       (unless icon
-         (error (format "Unable to find icon with name `%s' in icon set `%s'" icon-name (quote ,name))))
-       (let ((face (if other-face
-                       `(:family ,family :height ,height :inherit ,other-face)
-                     `(:family ,family :height ,height))))
-         (propertize icon
-                     'face face           ;so that this works without `font-lock-mode' enabled
-                     'font-lock-face face ;so that `font-lock-mode' leaves this alone
-                     'display `(raise ,v-adjust)
-                     'rear-nonsticky t))))
-   (defun ,(nerd-icons--insert-function-name name) (&optional arg)
-     ,(format "Insert a %s icon at point." family)
-     (interactive "P")
-     (nerd-icons-insert arg (quote ,name)))))
+  `(progn
+     (defun ,(nerd-icons--function-name name) (icon-name &rest args)
+       (let ((icon (cdr (assoc icon-name ,alist)))
+             (other-face (when nerd-icons-color-icons (plist-get args :face)))
+             (height  (* nerd-icons-scale-factor (or (plist-get args :height) 1.0)))
+             (v-adjust (* nerd-icons-scale-factor (or (plist-get args :v-adjust) nerd-icons-default-adjust)))
+             (family ,family))
+         (unless icon
+           (error (format "Unable to find icon with name `%s' in icon set `%s'" icon-name (quote ,name))))
+         (let ((face (if other-face
+                         `(:family ,family :height ,height :inherit ,other-face)
+                       `(:family ,family :height ,height))))
+           (propertize icon
+                       'face face           ;so that this works without `font-lock-mode' enabled
+                       'font-lock-face face ;so that `font-lock-mode' leaves this alone
+                       'display `(raise ,v-adjust)
+                       'rear-nonsticky t))))
+     (defun ,(nerd-icons--insert-function-name name) (&optional arg)
+       ,(format "Insert a %s icon at point." family)
+       (interactive "P")
+       (nerd-icons-insert arg (quote ,name)))))
 
 (nerd-icons--define-icon fileicon nerd-icons-alist/fileicon "Hack Nerd Font")
 (nerd-icons--define-icon faicon   nerd-icons-alist/faicon   "Hack Nerd Font")
