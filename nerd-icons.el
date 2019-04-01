@@ -6,7 +6,7 @@
 ;; Created: 2019/03/29
 ;; Version: 0.1.0
 ;; Package-Requires: ((emacs "24.4"))
-;; URL: https://github.com/twlz0ne/nerd-icons
+;; URL: https://github.com/twlz0ne/nerd-icons.el
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify

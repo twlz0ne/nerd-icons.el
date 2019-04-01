@@ -6,7 +6,7 @@
 ;; Created: 2019/03/29
 ;; Version: 0.1.0
 ;; Package-Requires: (())
-;; URL: https://github.com/twlz0ne/nerd-icons
+;; URL: https://github.com/twlz0ne/nerd-icons.el
 ;; Keywords: 
 
 ;; This program is free software; you can redistribute it and/or modify
