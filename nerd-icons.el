@@ -631,12 +631,12 @@ If SHOW-FAMILY is non-nil, displays the icons family in the candidate string."
 ;; Family Face Functions
 (defun nerd-icons-icon-family-for-file (file)
   "Get the icons font family for FILE."
-  (let ((icon (all-the-icons-match-to-alist file nerd-icons-icon-alist)))
+  (let ((icon (nerd-icons-match-to-alist file nerd-icons-icon-spec)))
     (funcall (intern (format "%s-family" (car icon))))))
 
 (defun nerd-icons-icon-family-for-mode (mode)
   "Get the icons font family for MODE."
-  (let ((icon (cdr (assoc mode nerd-icons-mode-icon-alist))))
+  (let ((icon (cdr (assoc mode nerd-icons-mode-icon-spec))))
     (if icon (funcall (intern (format "%s-family" (car icon)))) nil)))
 
 (defun nerd-icons-icon-family (icon)
@@ -782,6 +782,7 @@ directory of this package.
 FAMILY is the font family to use for the icons.
 FONT-NAME is the name of the .ttf file providing the font, defaults to FAMILY."
   `(progn
+     (defun ,(nerd-icons--family-name name) () ,family)
      (defun ,(nerd-icons--function-name name) (icon-name &rest args)
        (let ((icon (cdr (assoc icon-name ,alist)))
              (other-face (when nerd-icons-color-icons (plist-get args :face)))
