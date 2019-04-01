@@ -583,6 +583,12 @@
 
 ;;; Functions
 
+(defun nerd-icons-auto-mode-match? (&optional file)
+  "Whether or not FILE's `major-mode' match against its `auto-mode-alist'."
+  (let* ((file (or file (buffer-file-name) (buffer-name)))
+         (auto-mode (nerd-icons-match-to-alist file auto-mode-alist)))
+    (eq major-mode auto-mode)))
+
 (defun nerd-icons-match-to-alist (file alist)
   "Match FILE against an entry in ALIST using `string-match'."
   (cdr (cl-find-if (lambda (it) (string-match (car it) file)) alist)))
