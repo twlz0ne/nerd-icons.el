@@ -100,4 +100,24 @@
    (equal (cdr (assoc "tornado" nerd-icons-alist/weather))
           (nerd-icons-icon-for-weather "tornado"))))
 
+(ert-deftest test-nerd-icons--family-name ()
+  (should
+   (equal 'nerd-icons-fileicon-family
+          (nerd-icons--family-name 'fileicon))))
+
+(ert-deftest test-nerd-icons-icon-family ()
+  (should
+   (equal "Hack Nerd Font"
+          (nerd-icons-icon-family (nerd-icons-material "3d_rotation")))))
+
+(ert-deftest test-nerd-icons-icon-family-for-file ()
+  (should
+   (equal "Hack Nerd Font"
+          (nerd-icons-icon-family-for-file "foo.el"))))
+
+(ert-deftest test-nerd-icons-icon-family-for-mode ()
+  (should
+   (equal "Hack Nerd Font"
+          (nerd-icons-icon-family-for-mode 'emacs-lisp-mode))))
+
 ;;; test-nerd-icons.el ends here
