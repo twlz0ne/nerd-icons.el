@@ -30,8 +30,8 @@
 ;; icons the same way you would normal text.  This enables things such
 ;; as better scaling of and anti aliasing of the icons.
 
-;; This package provides an interface to the Hack Nerd Fonts:
-;; https://github.com/ryanoasis/nerd-fonts/
+;; This package provides an interface to the Nerd Fonts:
+;; http://nerdfonts.com/
 
 ;; See README.md for more information.
 
@@ -52,6 +52,11 @@
   :prefix "nerd-icons-"
   :group 'appearance
   :group 'convenience)
+
+(defcustom nerd-icons-font-family "Hack Nerd Font"
+  "The family name of the Nerd Font."
+  :group 'nerd-icons
+  :type 'string)
 
 (defcustom nerd-icons-color-icons t
   "Whether or not to include a foreground colour when formatting the icon."
@@ -804,11 +809,11 @@ FONT-NAME is the name of the .ttf file providing the font, defaults to FAMILY."
        (interactive "P")
        (nerd-icons-insert arg (quote ,name)))))
 
-(nerd-icons--define-icon fileicon nerd-icons-alist/fileicon "Hack Nerd Font")
-(nerd-icons--define-icon faicon   nerd-icons-alist/faicon   "Hack Nerd Font")
-(nerd-icons--define-icon octicon  nerd-icons-alist/octicon  "Hack Nerd Font")
-(nerd-icons--define-icon weather  nerd-icons-alist/weather "Hack Nerd Font")
-(nerd-icons--define-icon material nerd-icons-alist/material "Hack Nerd Font")
+(nerd-icons--define-icon fileicon nerd-icons-alist/fileicon nerd-icons-font-family)
+(nerd-icons--define-icon faicon   nerd-icons-alist/faicon   nerd-icons-font-family)
+(nerd-icons--define-icon octicon  nerd-icons-alist/octicon  nerd-icons-font-family)
+(nerd-icons--define-icon weather  nerd-icons-alist/weather  nerd-icons-font-family)
+(nerd-icons--define-icon material nerd-icons-alist/material nerd-icons-font-family)
 
 (provide 'nerd-icons)
 

@@ -107,17 +107,17 @@
 
 (ert-deftest test-nerd-icons-icon-family ()
   (should
-   (equal "Hack Nerd Font"
+   (equal nerd-icons-font-family
           (nerd-icons-icon-family (nerd-icons-material "3d_rotation")))))
 
 (ert-deftest test-nerd-icons-icon-family-for-file ()
   (should
-   (equal "Hack Nerd Font"
+   (equal nerd-icons-font-family
           (nerd-icons-icon-family-for-file "foo.el"))))
 
 (ert-deftest test-nerd-icons-icon-family-for-mode ()
   (should
-   (equal "Hack Nerd Font"
+   (equal nerd-icons-font-family
           (nerd-icons-icon-family-for-mode 'emacs-lisp-mode))))
 
 ;;; test-nerd-icons.el ends here
